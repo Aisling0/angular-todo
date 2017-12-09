@@ -1,6 +1,6 @@
 angular.module('RouteControllers', [])
     .controller('HomeController', function($scope) {
-        $scope.title = "Welcome To Sim4Pal!";
+        $scope.title = "Welcome To TodoApp!";
     })
     .controller('RegisterController', function($scope, $location, UserAPIService, store) {
         $scope.registrationUser = {};
@@ -23,7 +23,7 @@ angular.module('RouteControllers', [])
  
             UserAPIService.callAPI(URL + "accounts/register/", $scope.registrationUser).then(function(results) {
                     $scope.data = results.data;
-                    alert("You have successfully registered to Sim4Pal");
+                    alert("You have successfully registered to TodoApp");
                     $scope.login();
                 }).catch(function(err) {
                     alert("Oops! Something went wrong!");
